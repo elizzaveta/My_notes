@@ -9,6 +9,18 @@ function add_note_type_main(){
 
 }
 
+function cll(idd){
+    let el = document.getElementById(idd);
+    let text = localStorage.getItem(idd);
+    alert(text);
+    let text_area = document.getElementById("note");
+    text_area.innerHTML = text;
+
+
+    //el.innerText="here";
+    //alert(idd);
+
+}
 function save_note_button(){
     let  title = document.getElementById("my_title").value;
     let text = document.getElementById("note").value;
@@ -23,21 +35,19 @@ function save_note_button(){
     let new_note = document.createElement("div");
     new_note.className = "note_preview";
     new_note.textContent = title;
-
+    new_note.onclick = function (){
+        cll(this.id);
+    }
 
     let my_hash = create_hash();
     new_note.id = my_hash;
     location.hash = my_hash;
 
+    localStorage.setItem(my_hash,text);
+
     note_block.prepend(new_note);
 }
 
-function cll(){
-    document.querySelector('#note_preview').addEventListener('click', function(e){ // Вешаем обработчик клика на UL, не LI
-        let id = e.target.id; // Получили ID, т.к. в e.target содержится элемент по которому кликнули
-        alert(id)
-    });
-}
 
 function create_hash() {
     let result           = '';
