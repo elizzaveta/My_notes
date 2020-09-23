@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <script src="script.js"></script>
+  <title>Notes</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+    <div class = "header" id= "header">ЗАМЕТКИ</div>
+    <div class = "main" id = "my_main_div">
+        <div class = "main_part" id = "main_part_div">
+            <div class="main_date" id = "note_date">cr</div>
+            <div class ="main_title">
+                <input class = "my_title" id = "my_title" placeholder="Title">
+                <button class = "save_button" id = "save_button" onclick="save_note_button()">Сохранить</button><br><br>
+                <textarea class= "Your_note" id = "note" placeholder="Your note"></textarea>
+            </div>
+            <div class = "main_note_text"></div>
+        </div>
+        <div class = "button_div" id = "add_note_div">
+            <button class = "add_button" type="button" id = "add_button" onclick="add_note_type_main()">Новая заметка</button>
+        </div>
+        <div class = "notes" id = "my_notes_div">
+            <div onclick="cll()" class = "note_preview" id = "note_preview">note</div>
+            <div onclick=alert("click2") class = "note_preview">note</div>
+        </div>
+
+    </div>
+</body>
+</html>

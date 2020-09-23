@@ -1,0 +1,81 @@
+.header{
+    background: #e9e7e2;
+    height: 60px;
+    text-align: center;
+    font-family: "Yu Gothic Light";
+    font-size: 30px;
+}
+.main{
+    top: 50px;
+    background: #e9e7e2;
+    margin-top: 3px;
+    font-size: 14px;
+    height: 600px;
+}
+.button_div{
+    text-align: center;
+    background: #d6dbde;
+    width:30%;
+    height: 60px;
+}
+.add_button{
+    background-color: #c7cccf;
+    width: 80%;
+    height: 80%;
+    margin-top: 6px;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    border: solid 1px black;
+}
+
+.notes{
+    overflow: scroll;
+    top: 10px;
+    left: 150px;
+    background: #c7cccf;
+    float: left;
+    width: 30%;
+    height: 500px;
+}
+div.note_preview{
+    background: #8d8d8d;
+    margin: 1px;
+    cursor: pointer;
+}
+div.note_preview:hover{
+    opacity: 0.5;
+}
+
+.main_part{
+    margin-top: 0;
+    float: right;
+    width: 70%;
+    height: 560px;
+    background: #e9e7e2;
+
+}
+.main_date{
+    height: 40px;
+    width: available;
+}
+.my_title{
+    background: #e9e7e2;
+    width: 300px;
+}
+.Your_note{
+    background: #e9e7e2;
+    width: 90%;
+    height: 450px;
+    overflow: visible;
+}
+.save_button{
+    float: right;
+    background-color: #c7cccf;
+    margin-right: 10%;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    border: solid 1px black;
+
+}
