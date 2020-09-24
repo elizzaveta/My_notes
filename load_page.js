@@ -1,3 +1,5 @@
+
+
 function load_localStorage(){
     let text = document.getElementById("my_title");
     for(let i = 0; i<localStorage.length; i++){
@@ -5,6 +7,7 @@ function load_localStorage(){
         let t = localStorage.getItem(id);
         add_note_from_storage(id);
     }
+
 }
 
 function add_note_from_storage(key){
@@ -20,4 +23,11 @@ function add_note_from_storage(key){
     new_note.onclick = function (){ cll(this.id); }
 
     note_block.append(new_note);
+}
+
+
+window.addEventListener('hashchange', hashchange);
+
+function hashchange(){
+    console.log("yes")
 }

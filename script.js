@@ -7,6 +7,8 @@ function add_note_type_main(){
     title.value = "";
     note.value = "";
 
+    let n = location.hash;
+
 }
 
 function cll(idd){
