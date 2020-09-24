@@ -15,6 +15,7 @@ function add_note_from_storage(key){
     let new_note = document.createElement("div");
 
     new_note.className = "note_preview";
+    new_note.id = key;
     new_note.textContent = json.title;
     new_note.onclick = function (){ cll(this.id); }
 

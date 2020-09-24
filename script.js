@@ -11,15 +11,20 @@ function add_note_type_main(){
 
 function cll(idd){
     let el = document.getElementById(idd);
-    let text = localStorage.getItem(idd);
+    let json = localStorage.getItem(idd);
+    json = JSON.parse(json);
 
 
-    let title = el.textContent;
     //alert(text);
     let text_area = document.getElementById("note");
     let title_area = document.getElementById("my_title");
-    text_area.value = text;
-    title_area.value = title;
+    let time_area = document.getElementById("note_date");
+
+    text_area.value = json.text;
+    title_area.value = json.title;
+    time_area.textContent = json.time;
+
+    location.hash = idd;
 
     //el.innerText="here";
     //alert(idd);
@@ -51,7 +56,7 @@ function save_note_button(){
     if(old_date_text === ""){
         save_note_new_note1(json,title,time);
     }else{
-        update_note(title, text, time);
+        update_note();
     }
 
 
@@ -81,6 +86,11 @@ function save_note_new_note1(json, title, time){
 
 }
 
+function update_note(){
+    let id = location.hash;
+    alert(id);
+}
+
 function save_note_new_note(title, text, time){
     let note_block = document.getElementById("my_notes_div");
     let new_note = document.createElement("div");
@@ -99,9 +109,8 @@ function save_note_new_note(title, text, time){
 
     note_block.prepend(new_note);
 }
-function update_note(title, text, time){
 
-}
+
 
 
 
