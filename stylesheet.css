@@ -60,22 +60,26 @@ div.note_preview:hover{
     width: available;
 }
 .my_title{
+    resize: none;
     background: #e9e7e2;
     width: 300px;
 }
 .Your_note{
+    resize: none;
     background: #e9e7e2;
     width: 90%;
     height: 450px;
     overflow: visible;
 }
 .save_button{
-    float: right;
     background-color: #c7cccf;
-    margin-right: 10%;
     color: white;
     text-align: center;
     font-size: 16px;
-    border: solid 1px black;
-
+}
+.delete_button{
+    background-color: #c7cccf;
+    color: white;
+    text-align: center;
+    font-size: 16px;
 }

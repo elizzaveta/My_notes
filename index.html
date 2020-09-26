@@ -12,18 +12,21 @@
     <div class = "header" id= "header">ЗАМЕТКИ</div>
     <div class = "main" id = "my_main_div">
         <div class = "main_part" id = "main_part_div">
-            <div class="main_date" id = "note_date">cr</div>
+            <div class="main_date" id = "note_date"></div>
             <div class ="main_title">
-                <input class = "my_title" id = "my_title" placeholder="Title">
-                <button class = "save_button" id = "save_button" onclick="save_note_button()">Сохранить</button><br><br>
+                <textarea class = "my_title" id = "my_title" placeholder="Title"></textarea>
                 <textarea class= "Your_note" id = "note" placeholder="Your note"></textarea>
+            </div>
+            <div class ="buttons">
+                <button class = "save_button" id = "save_button" onclick="save_note_button()">Сохранить</button>
+                <button class = "delete_button" id = "delete_button" onclick="delete_note_button()">Удалить</button>
             </div>
             <div class = "main_note_text"></div>
         </div>
         <div class = "button_div" id = "add_note_div">
             <button class = "add_button" type="button" id = "add_button" onclick="add_note_type_main()">Новая заметка</button>
         </div>
-        <div class = "notes" id = "my_notes_div" >
+        <div class = "notes" id = "my_notes_div">
         </div>
 
     </div>
