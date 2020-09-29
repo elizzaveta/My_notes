@@ -3,20 +3,17 @@ function add_note_type_main(){
     let date=document.getElementById("note_date");
     let title = document.getElementById("my_title");
     let note = document.getElementById("note");
+
     date.textContent = "";
     title.value = "";
     note.value = "";
-
     location.hash = "";
-
 }
 
 function cll(idd){
     let json = localStorage.getItem(idd);
     json = JSON.parse(json);
 
-
-    //alert(text);
     let text_area = document.getElementById("note");
     let title_area = document.getElementById("my_title");
     let time_area = document.getElementById("note_date");
@@ -27,8 +24,6 @@ function cll(idd){
 
     location.hash = idd;
 
-    //el.innerText="here";
-    //alert(idd);
 
 }
 function save_note_button(){
@@ -37,7 +32,7 @@ function save_note_button(){
     if(title ==="")title = "Untitled";
 
    let time = get_date();
-    let my_hash = create_hash();
+   let my_hash = create_hash();
 
     let info = {
         title: title,
@@ -50,6 +45,7 @@ function save_note_button(){
 
     let old_date = document.getElementById("note_date");
     let old_date_text = old_date.textContent;
+
     if(old_date_text === ""){
         save_note_new_note1(json,title,time,my_hash);
     }else{
@@ -83,22 +79,17 @@ function save_note_new_note1(json, title, time, id){
     new_note.innerHTML = `<pre>${title}<br>${space}${time}<pre>`;
     new_note.onclick = function (){ cll(this.id); }
 
-
     new_note.id = id;
     location.hash = id;
 
     localStorage.setItem(id,json);
     note_block.prepend(new_note);
-
 }
 
 function update_note(){
     delete_note();
     document.getElementById("note_date").textContent = "";
     save_note_button();
-
-
-
 }
 
 function get_date(){

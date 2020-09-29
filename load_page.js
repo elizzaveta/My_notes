@@ -1,5 +1,3 @@
-
-
 function load_localStorage(){
     let order = [];
     let text = document.getElementById("my_title");
@@ -10,11 +8,7 @@ function load_localStorage(){
         order.push(t);
 
     }
-    console.log(order);
-    console.log("br");
     sort_notes_from_ls(order);
-    //console.log(order);
-    //console.log("br");
     add_note_from_storage(order);
 
     let hash = location.hash;
@@ -25,17 +19,12 @@ function load_localStorage(){
         cll(hash);
 
     }
-
-
 }
 
 function sort_notes_from_ls(order){
     let data = order.sort(function(a, b) {
         return ((a.time === b.time) ? 0 : ((a.time > b.time) ? 1 : -1));
     });
-    console.log(data);
-
-    console.log("br");
 }
 
 function add_note_from_storage(order){
