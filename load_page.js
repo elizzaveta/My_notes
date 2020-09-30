@@ -23,7 +23,8 @@ function load_localStorage(){
 
 function sort_notes_from_ls(order){
     let data = order.sort(function(a, b) {
-        return ((a.time === b.time) ? 0 : ((a.time > b.time) ? 1 : -1));
+        // return ((a.time === b.time) ? 0 : (a.time > b.time) ? 1 : -1);
+        return ((new Date(a.time) === new Date(b.time)) ? 0 : ((new Date(a.time) > new Date(b.time)) ? 1 : -1));
     });
 }
 
@@ -37,7 +38,8 @@ function add_note_from_storage(order){
         new_note.className = "note_preview";
         new_note.id = note_details.id;
         let title = note_details.title;
-        let time = note_details.time;
+        let time = new Date(note_details.time);
+         time =    time.toLocaleString();
         let space = "  ";
         new_note.innerHTML = `<pre>${title}<br>${space}${time}<pre>`;
         new_note.onclick = function (){ cll(this.id); }

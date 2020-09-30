@@ -20,7 +20,9 @@ function cll(idd){
 
     text_area.value = json.text;
     title_area.value = json.title;
-    time_area.textContent = json.time;
+    let time = new Date(json.time);
+    time = time.toLocaleString();
+    time_area.textContent = time;
 
     location.hash = idd;
 
@@ -31,13 +33,16 @@ function save_note_button(){
     let text = document.getElementById("note").value;
     if(title ==="")title = "Untitled";
 
-   let time = get_date();
+   let date = get_date();
+   let time = date.toLocaleString();
+
    let my_hash = create_hash();
 
     let info = {
         title: title,
         text: text,
-        time: time,
+        time: date,
+        // time: time,
         id: my_hash
     };
 
@@ -99,12 +104,13 @@ function get_date(){
     let sec = now.getSeconds()
     let year = now.getFullYear();
     let month = now.getMonth();
-    let dat = now.getDay();
+    let dat = now.getDate();
+
 
     let date = new Date(year, month, dat, hour, min, sec);
-    let time = date.toLocaleString();
 
-    return time;
+
+    return date;
 }
 
 
