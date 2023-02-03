@@ -1,35 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    <script src="script.js"></script>
-    <script src = "load_page.js"></script>
+    <meta charset="UTF-8">
     <title>Notes</title>
     <link rel="icon" type="image/x-icon" href="favicon.png">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="script.js"></script>
+    <script src="load_page.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
-<body onload = "load_localStorage()" >
-    <div class = "header" id= "header">ЗАМЕТКИ</div>
-    <div class = "main" id = "my_main_div">
-        <div class = "main_part" id = "main_part_div">
-            <div class="main_date" id = "note_date"></div>
-            <div class ="main_title">
-                <textarea class = "my_title" id = "my_title" placeholder="Title"></textarea>
-                <textarea class= "Your_note" id = "note" placeholder="Your note"></textarea>
-            </div>
-            <div class ="buttons">
-                <button class = "save_button" id = "save_button" onclick="save_note_button()">Сохранить</button>
-                <button class = "delete_button" id = "delete_button" onclick="delete_note_button()">Удалить</button>
-            </div>
-            <div class = "main_note_text"></div>
+<body onload="load_localStorage()">
+<header>
+    SIMPLE NOTES
+</header>
+<main>
+    <div class="create-note-block">
+        <div class="date" id="note_date"></div>
+        <div class="inputs">
+            <textarea id="noteTitle" placeholder="Title"></textarea>
+            <textarea class="note-content" id="note" placeholder="Your note"></textarea>
         </div>
-        <div class = "button_div" id = "add_note_div">
-            <button class = "add_button" type="button" id = "add_button" onclick="add_note_type_main()">Новая заметка</button>
+        <div>
+            <button class="button" onclick="save_note_button()">Save</button>
+            <button class="button" onclick="delete_note_button()">Delete</button>
         </div>
-        <div class = "notes" id = "my_notes_div">
-        </div>
-
     </div>
+    <div class="left-block">
+        <button class="add_button" onclick="add_note_type_main()">
+            Add Note
+        </button>
+        <div class="notes-list" id="my_notes_div"></div>
+    </div>
+
+</main>
 </body>
 </html>

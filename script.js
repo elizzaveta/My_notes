@@ -1,7 +1,7 @@
 
 function add_note_type_main(){
     let date=document.getElementById("note_date");
-    let title = document.getElementById("my_title");
+    let title = document.getElementById("noteTitle");
     let note = document.getElementById("note");
 
     date.textContent = "";
@@ -15,7 +15,7 @@ function cll(idd){
     json = JSON.parse(json);
 
     let text_area = document.getElementById("note");
-    let title_area = document.getElementById("my_title");
+    let title_area = document.getElementById("noteTitle");
     let time_area = document.getElementById("note_date");
 
     text_area.value = json.text;
@@ -29,7 +29,7 @@ function cll(idd){
 
 }
 function save_note_button(){
-    let  title = document.getElementById("my_title").value;
+    let  title = document.getElementById("noteTitle").value;
     let text = document.getElementById("note").value;
     if(title ==="")title = "Untitled";
 
