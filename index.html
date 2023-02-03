@@ -4,32 +4,32 @@
     <meta charset="UTF-8">
     <title>Notes</title>
     <link rel="icon" type="image/x-icon" href="favicon.png">
-    <script src="script.js"></script>
-    <script src="load_page.js"></script>
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body onload="load_localStorage()">
+<body onload="loadLocalStorageData()">
 <header>
     SIMPLE NOTES
 </header>
 <main>
     <div class="create-note-block">
-        <div class="date" id="note_date"></div>
+        <div class="date" id="noteDate"></div>
         <div class="inputs">
             <textarea id="noteTitle" placeholder="Title"></textarea>
-            <textarea class="note-content" id="note" placeholder="Your note"></textarea>
+            <textarea class="note-content" id="noteContent" placeholder="Your note"></textarea>
         </div>
         <div>
-            <button class="button" onclick="save_note_button()">Save</button>
-            <button class="button" onclick="delete_note_button()">Delete</button>
+            <button class="button" onclick="handleSaveButtonClick()">Save</button>
+            <button class="button" onclick="handleDeleteButtonClick()">Delete</button>
         </div>
     </div>
     <div class="left-block">
-        <button class="add_button" onclick="add_note_type_main()">
+        <button class="add_button" onclick="handleAddNoteClick()">
             Add Note
         </button>
         <div class="notes-list" id="my_notes_div"></div>
     </div>
+    <script src="script.js"></script>
+    <script src="loadScript.js"></script>
 
 </main>
 </body>
